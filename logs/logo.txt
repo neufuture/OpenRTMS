@@ -1,0 +1,17 @@
+03-06 19:37:31.211: ERROR/AndroidRuntime(11777): Uncaught handler: thread main exiting due to uncaught exception
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777): java.lang.VerifyError: Pachube.Pachube
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at org.openrtms.android.OpenRTMS.onCreate(OpenRTMS.java:116)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1123)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2364)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2417)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.app.ActivityThread.access$2100(ActivityThread.java:116)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1794)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.os.Handler.dispatchMessage(Handler.java:99)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.os.Looper.loop(Looper.java:123)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at android.app.ActivityThread.main(ActivityThread.java:4203)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at java.lang.reflect.Method.invokeNative(Native Method)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at java.lang.reflect.Method.invoke(Method.java:521)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:791)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:549)
+03-06 19:37:31.221: ERROR/AndroidRuntime(11777):     at dalvik.system.NativeStart.main(Native Method)
+03-06 19:37:31.221: DEBUG/GpsLocationProvider(80): Acquiring wakelock

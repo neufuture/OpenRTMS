@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  
+	<PreferenceCategory android:title="Pachube">
+	<EditTextPreference
+		android:title="API Key"
+		android:key="pachubeKey"
+		/>
+		
+	<EditTextPreference
+		android:title="Feed ID"
+		android:key="pachubeFeed"
+		/>
+		
+	</PreferenceCategory>
+
+	<PreferenceCategory android:title="Recording">
+	<ListPreference
+		android:title="Interval time"
+		android:key="interval"
+		android:entries="@array/interval_names"
+		android:entryValues="@array/interval_values"
+		/>
+		
+	<CheckBoxPreference
+		android:title="Run in background" 
+		android:key="background"
+		/>
+		
+	<CheckBoxPreference
+		android:title="Attach GPS"
+		android:key="gps_record"
+		/>
+		
+	</PreferenceCategory>
+		
+</PreferenceScreen>

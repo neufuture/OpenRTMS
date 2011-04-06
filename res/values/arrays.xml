@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string-array name="cities">
-		<item>Philadelphia</item>
-		<item>Pittsburgh</item>
-		<item>Allentown/Bethlehem</item>
-		<item>Erie</item>
-		<item>Reading</item>
-		<item>Scranton</item>
-		<item>Lancaster</item>
-		<item>Altoona</item>
-		<item>Harrisburg</item>
-	</string-array>
-	<string-array name="airport_codes">
-		<item>PHL</item>
-		<item>PIT</item>
-		<item>ABE</item>
-		<item>ERI</item>
-		<item>RDG</item>
-		<item>AVP</item>
-		<item>LNS</item>
-		<item>AOO</item>
-		<item>MDT</item>
-	</string-array>
+
+	<string-array name="interval_names">
+		<item>.5 seconds</item>
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>20 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>5 minutes</item>
+    </string-array>
+    
+    <string-array name="interval_values">
+        <item>500</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>300000</item>
+    </string-array>
+
 </resources>
