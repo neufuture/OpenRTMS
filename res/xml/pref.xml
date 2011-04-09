@@ -3,11 +3,18 @@
   xmlns:android="http://schemas.android.com/apk/res/android">
   
 	<PreferenceCategory android:title="Pachube">
+
 	<EditTextPreference
-		android:title="API Key"
-		android:key="pachubeKey"
-		/>
-		
+		android:title="Login"
+		android:key="pachubeLogin"
+		android:singleLine="true"
+        />
+	 <EditTextPreference
+	 	android:title="Password"
+		android:key="pachubePass"
+		android:password="true"
+        android:singleLine="true"
+        />
 	<EditTextPreference
 		android:title="Feed ID"
 		android:key="pachubeFeed"
@@ -25,12 +32,12 @@
 		
 	<CheckBoxPreference
 		android:title="Run in background" 
-		android:key="background"
+		android:key="runBackground"
 		/>
 		
 	<CheckBoxPreference
-		android:title="Attach GPS"
-		android:key="gps_record"
+		android:title="Log GPS"
+		android:key="gpsRecord"
 		/>
 		
 	</PreferenceCategory>

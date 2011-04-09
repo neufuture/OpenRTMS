@@ -1,23 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    
+    <LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="2">
 
-<TextView
-	android:id="@+id/textInfo"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	/>
+	    <com.google.android.maps.MapView
+	        android:id="@+id/mapview"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:clickable="true"
+			android:apiKey="0Lz66KapE-6PZYOmFahsW5_kLI2p-JJV4S9yhAg"
+			android:layout_weight="0"
+	    />
+    
+	</LinearLayout>
 	
-<Button
-	android:id="@+id/record"
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content"
-	android:layout_alignParentBottom="true"
-	android:text="Record"
-	android:onClick="startRecord" />
+    <RelativeLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="3">
+      
+		<TextView
+			android:id="@+id/textInfo"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textSize="9pt"
+			android:layout_weight="1"
+			android:layout_margin="5dip"
+		/>
+		<RelativeLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_weight="1">
+      
+		<Button
+			android:id="@+id/record"
+			android:gravity="center_horizontal"			
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Record"
+			android:onClick="startRecord"
+			android:layout_weight="1"
+			android:layout_margin="5dip"
+		/>
+		
+		<!--
+		<Button
+			android:id="@+id/changeView"
+			android:gravity="center_horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Graph View"
+			android:onClick="changeView"
+			android:layout_weight="1"
+			android:layout_margin="5dip"
+		/>
+		  -->
+		
 
+		</RelativeLayout>
+		
+	</RelativeLayout>
        
-</RelativeLayout>
+</LinearLayout>

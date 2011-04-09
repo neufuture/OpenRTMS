@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name=".PrefView"></activity>
-
+		<activity android:name=".PrefView"></activity>
+		
+		<uses-library android:name="com.google.android.maps" />
     </application>
 
 </manifest> 

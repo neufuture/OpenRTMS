@@ -2,7 +2,6 @@
 <resources>
 
 	<string-array name="interval_names">
-		<item>.5 seconds</item>
         <item>5 seconds</item>
         <item>10 seconds</item>
         <item>20 seconds</item>
@@ -12,7 +11,6 @@
     </string-array>
     
     <string-array name="interval_values">
-        <item>500</item>
         <item>5000</item>
         <item>10000</item>
         <item>20000</item>
