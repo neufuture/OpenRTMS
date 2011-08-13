@@ -7,17 +7,16 @@
 	<EditTextPreference
 		android:title="Login"
 		android:key="pachubeLogin"
-		android:singleLine="true"
         />
 	 <EditTextPreference
 	 	android:title="Password"
 		android:key="pachubePass"
 		android:password="true"
-        android:singleLine="true"
         />
 	<EditTextPreference
 		android:title="Feed ID"
 		android:key="pachubeFeed"
+		android:digits="true"
 		/>
 		
 	</PreferenceCategory>

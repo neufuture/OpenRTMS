@@ -62,7 +62,7 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
 
 public class OpenRTMS extends MapActivity implements LocationListener{	
-	static final String tag = "Main"; // for Log
+	static final String tag = "State"; // for Log
 	
 	// Bluetooth device address 
 //	private static final String DEVICE_ADDRESS = "";
@@ -73,7 +73,7 @@ public class OpenRTMS extends MapActivity implements LocationListener{
 	HttpClient client = new HttpClient("www.pachube.com");
 	String pachubeKey;
 	int pachubeFeed;
-	String pachubeLogin = "";
+	String pachubeLogin;
 	String pachubePass;
 
 	String val;
@@ -105,33 +105,35 @@ public class OpenRTMS extends MapActivity implements LocationListener{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
 		mapView = (MapView) findViewById(R.id.mapview);
 
         txtInfo = (TextView) this.findViewById(R.id.textInfo);
 		record = (Button)   this.findViewById(R.id.record);
 	//	changeView = (Button)   this.findViewById(R.id.changeView);
 
-		
+		Log.i(tag, "Activating GPS");
 		// Activate GPS
 		lm = (LocationManager) getSystemService(LOCATION_SERVICE);
 		location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 		lat = location.getLatitude();
 		lon = location.getLongitude();
 		
+		Log.i(tag, "Building Map");
 		mapView.setBuiltInZoomControls(true);
-		mapView.setStreetView(true);
 		mapController = mapView.getController();
 		mapController.setZoom(18); // Zoom 1 is world view
 		
 		myLocationOverlay = new MyLocationOverlay(this, mapView);
         mapView.getOverlays().add(myLocationOverlay);
-        // myLocationOverlay.enableCompass();
         myLocationOverlay.enableMyLocation();
+        
         myLocationOverlay.runOnFirstFix(new Runnable() {
             public void run() {
                 mapController.animateTo(myLocationOverlay.getMyLocation());
             }
         });
+        
         
         
     }
@@ -140,20 +142,22 @@ public class OpenRTMS extends MapActivity implements LocationListener{
 	public void onResume() {
 		super.onResume();
 		
-		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 10f, this);
-		
+		lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 10f, this);
+		Log.i(tag, "Location Requested");
 		// Get values from preferneces on resume
 		SharedPreferences prefs=PreferenceManager.getDefaultSharedPreferences(this);
+		
+		pachubeLogin = prefs.getString("pachubeLogin", "");
+		pachubePass = prefs.getString("pachubePass", "");
 		pachubeFeed = Integer.parseInt(prefs.getString("pachubeFeed", "0"));
-		pachubePass = prefs.getString("pachubePass", "<unset>");
-		pachubeLogin = prefs.getString("pachubeLogin", "<unset>");
 		gpsRecord = prefs.getBoolean("gpsRecord", false);
 		runBackground = prefs.getBoolean("runBackground", false);
 		interval = Integer.parseInt(prefs.getString("interval", "5000"));
 		
-		if(pachubeLogin != "") getKey();
+		Log.i(tag, pachubeLogin);
+		if(pachubeLogin != null) getKey();
 		showMsg(pachubeKey);
-	
+		Log.i(tag, "Resumed");
 	}
 	
 	@Override
